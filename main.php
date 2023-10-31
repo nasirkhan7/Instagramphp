@@ -7,10 +7,23 @@
     <?php include("boot_css.php");
     ?>
     <title>Instagram</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+            .left {
+                position: fixed;
+                bottom: 0;
+                background-color: white;
+                width: 100%;
+                margin-left: -32px;
+                justify-content: center;
+                padding: 2rem 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header>
+    <header class="left">
         <ul style="list-style: none;" class="p-3 ">
             <li>
                 <img src="./Assets//5a4e432a2da5ad73df7efe7a.png" width="10%" alt="" class="my-3">
