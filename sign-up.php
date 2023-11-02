@@ -73,15 +73,14 @@ session_start();
             ";
         }
     ?>
-    <div class="container my-3 w-50 border border-1 p-3">
-        <div class="col-12 text-center">
+    <div class="container col-lg-6 my-3 w-50 text-center border border-1 p-3">
             <img style=" cursor: pointer;" class="p-3 ms-5 mb-3 text-align-center" width="50%"
                 src="./Assets/5a4e432a2da5ad73df7efe7a.png" alt="">
             <h6>Sign up to see photos and videos from your friends.</h6>
             <button class="btn btn-info w-50">
                 <div class="row text-center">
                     <div class="col-2">
-                        <img style=" cursor: pointer;" width="20px"
+                        <img style=" cursor: pointer;" width="15px"
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/640px-Facebook_icon_2013.svg.png"
                             alt="">
                     </div>
@@ -123,7 +122,7 @@ session_start();
                 </button>
             </form>
         </div>
-    </div>
+    
     <div class="container my-3 w-50 border border-1 p-2">
         <h6>Have an account?<a href="https://web.facebook.com/help/instagram/261704639352628?_rdc=1&_rdr"> Log
                 in</a>
@@ -159,5 +158,4 @@ session_unset();
     </script>
 
 </body>
-
 </html>

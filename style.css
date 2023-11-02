@@ -11,8 +11,6 @@
     padding: 5%;
 }
 
-
-
 .form {
     font-family: arial;
 }
@@ -33,7 +31,6 @@
     height: 3px;
     background-color: var(--bs-gray-300);
 }
-
 
 .mobile {
     height: 500px;
@@ -106,9 +103,9 @@
     border-radius: 50px;
     top: 2px;
 }
-@media(max-width:875px){
-    .mobile{display: none;}
+
+@media(max-width:875px) {
+    .mobile {
+        display: none;
+    }
 }
-
-
-

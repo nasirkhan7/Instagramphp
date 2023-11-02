@@ -14,12 +14,12 @@
 
     <div class="container front">
         <div class="row m-auto">
-            <div class="col-lg-6 col-md-0 ">
+            <div class="col-lg-6 col-md-0">
                 <div class='mobile '>
                     <div class='notch'>
                         <div class='camera'></div>
                         <div class='speaker'>
-                            <div class='sensor '>
+                            <div class='sensor'>
                             </div>
                             <div class='button'>
                                 <div class='volums'>
