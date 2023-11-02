@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <?php include 'boot_css.php'?>
     <style>
         .pro {
@@ -44,16 +45,41 @@ session_start();
             display: none !important;
         }
 
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
         .dialogbox {
             margin-left: auto;
             margin-right: auto;
-            padding-top: 30px;
-            padding-bottom: 5px;
-            padding-left: 5px;
-            padding-right: 5px;
+            padding: 20px;
             border-radius: 15px;
             display: none;
-            z-index: 222;
+            z-index: 999;
+            width: 300px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background: white;
+        }
+
+        .line {
+            writing-mode: vertical-rl;
+            margin-left: 50px;
+            height: 80%;
+        }
+
+        .pro-img {
+            font-size: 8rem;
         }
     </style>
 
@@ -61,45 +87,150 @@ session_start();
 </head>
 
 <body>
-        <?php include './config.php'?>
+    <?php include './config.php'?>
 
     <header>
-        <div class="row">
-            <div class="div">
-                <div class="pro">
-                    <button class="btn" title="change profile photo">
-                        <img class="profile rounded-circle" width="100px" src="./Assets//profile.png"
-                            alt="Add profile photo">
-                    </button>
-                    <div class="form">
-                        <form action="./add-image.php" method="POST" enctype="multipart/form-data">
-                            <input accept="image/jpeg,image/png" type="file" style="display:none;" class="fileInput" name="image">
-                        </form>
+        <div class="container shadow">
+            <div class="row">
+                <div class="col-4 my-3">
+                    <div class="div">
+                        <div class="pro">
+                            <button class="btn" title="change profile photo">
+                                <i class="pro-img bi bi-person-square p-2"></i>
+                            </button>
+                            <div class="form">
+                                <form action="./add-image.php" method="POST" enctype="multipart/form-data">
+                                    <input accept="image/jpeg,image/png" type="file" style="display:none;"
+                                        class="fileInput" name="image">
+                                </form>
+                            </div>
+                            <div class="overlay">
+                                <div class="dialogbox text-center">
+                                    <h5>change profile photo</h5>
+                                    <hr>
+                                    <a style="text-decoration: none; cursor:pointer"
+                                        class="upload fw-3 text-primary">upload photo</a>
+                                    <hr>
+                                    <a id="removePhoto" class="text-danger"
+                                        style="text-decoration: none; cursor:pointer">Remove Existing Photo</a>
+                                    <hr>
+                                    <a style="text-decoration: none; cursor:pointer" class="cancel">cancel</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dialogbox w-25 shadow text-center">
-                        <h5>change profile photo</h5>
-                        <hr>
-                        <a style="text-decoration: none; cursor:pointer" class="upload fw-3 text-primary">upload photo</a>
-                        <hr>
-                        <a id="removePhoto" class="text-danger" style="text-decoration: none; cursor:pointer">Remove Existing Photo</a>
-                        <hr>
-                        <a style="text-decoration: none; cursor:pointer" class="cancel">cancel</a>
+                </div>
+                <div class="col-8 my-3">
+                    <div class="user my-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="bg-light border-0 rounded"
+                                    style="font-family: sans-serif;">username</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="bg-light border-0 rounded" style="font-family: sans-serif;">Edit
+                                    Profile</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="bg-light border-0 rounded" style="font-family: sans-serif;">view
+                                    archive</button>
+                            </div>
+                            <div class="col-3">
+                                <img width="20px" src="./Assets//search7780.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="count my-3">
+                        <div class="row">
+                            <div class="col-3 d-flex">
+                                <div class="num">89</div>
+                                <div class="col-12">posts</div>
+                            </div>
+                            <div class="col-5 d-flex">
+                                <div class="col-2 color-dark">
+                                    <a href="" style="text-decoration: none;">333</a>
+                                </div>
+                                <div class="col-10">
+                                    <a style="text-decoration: none;" href="">follower</a>
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex">
+                                <div class="col-2">
+                                    <a style="text-decoration:none" class="">777</a>
+                                    <a style="text-decoration:none" class="col-12">following</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name">
+                        <h3>Nasir</h3>
+                    </div>
+                    <div class="bio">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam fuga distinctio soluta hic
+                            adipisci quod?</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <section class="main">
+        <div class="container mt-5 shadow">
+            <div class="row mt-4">
+                <div class="record d-flex text-center">
+                    <div class="col-3">
+                        <div class="pos d-flex align-items-center">
+                            <i class="bi bi-grid-3x3 p-2"></i>
+                            <p class="my-2">POST</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex">
+                        <div class="pos d-flex">
+                            <i class="bi bi-person-video2 p-2"></i>
+                            <p class="my-2">REELS</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="pos d-flex">
+                            <i class="bi bi-bookmark p-2"></i>
+                            <p style="font-size: small;" class="my-2">POSTS YOU'VE SAVED</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="pos d-flex align-items-center">
+                            <i class="bi bi-person-square p-2"></i>
+                            <p class="my-2">TAGGED</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards my-3">
+                <div class="row">
+                    <div class="col-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio vero fuga aperiam ad impedit
+                        aliquam nihil cupiditate officiis. Saepe possimus voluptas accusamus soluta assumenda atque illo
+                        nam laboriosam ipsam vel?
+                    </div>
+                    <div class="col-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio vero fuga aperiam ad impedit
+                        aliquam nihil cupiditate officiis. Saepe possimus voluptas accusamus soluta assumenda atque illo
+                        nam laboriosam ipsam vel?
+                    </div>
+                    <div class="col-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio vero fuga aperiam ad impedit
+                        aliquam nihil cupiditate officiis. Saepe possimus voluptas accusamus soluta assumenda atque illo
+                        nam laboriosam ipsam vel?
+                    </div>
+                </div>
 
 
 
 
 
 
-
-
-
-
-
+            </div>
+        </div>
+        </div>
+    </section>
 
 
 
@@ -109,26 +240,32 @@ session_start();
         let uploadphoto = document.querySelector('.upload');
         let fileInput = document.querySelector('.fileInput');
         let changePhotoButton = document.getElementById("changePhotoButton");
-        // let dialogBox = document.getElementById("dialogBox");
         let removePhotoLink = document.getElementById("removePhoto");
-        let cancelbtn=document.querySelector(".cancel");
-
+        let cancelbtn = document.querySelector(".cancel");
+        let overlay = document.querySelector(".overlay");
+        btn.addEventListener("click", () => {
+            overlay.style.display = "block";
+        });
         btn.addEventListener("click", () => {
             if (dialogbox.style.display === "none" || dialogbox.style.display === "") {
                 dialogbox.style.display = "block";
             } else {
                 dialogbox.style.display = "none";
             }
-        })
-        uploadphoto.addEventListener("click",()=>{
+        });
+        overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+    dialogbox.style.display = "none";
+});
+        uploadphoto.addEventListener("click", () => {
             fileInput.click();
-        })
-        fileInput.addEventListener("change",(e)=>{
-            const selectedFile=e.target.files[0];
-            if(selectedFile){
+        });
+        fileInput.addEventListener("change", (e) => {
+            const selectedFile = e.target.files[0];
+            if (selectedFile) {
                 alert("You selected a file: " + selectedFile.name);
             }
-        })
+        });
 
         // Add a click event listener to the "Remove Existing Photo" link
         removePhotoLink.addEventListener("click", () => {
@@ -146,9 +283,9 @@ session_start();
             }
         });
 
-        cancelbtn.addEventListener("click",()=>{
-            dialogbox.style.display="none"
-        })
+        cancelbtn.addEventListener("click", () => {
+            dialogbox.style.display = "none"
+        });
     </script>
 
     <?php include'boot_js.php';
