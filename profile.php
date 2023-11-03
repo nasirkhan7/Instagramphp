@@ -72,6 +72,38 @@ session_start();
             background: white;
         }
 
+        .dialogbox1 {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border-radius: 15px;
+            display: none;
+            z-index: 999;
+            width: 450px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background: white;
+        }
+
+        .dialogbox2 {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border-radius: 15px;
+            display: none;
+            z-index: 999;
+            width: 450px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background: white;
+        }
+
         .line {
             writing-mode: vertical-rl;
             margin-left: 50px;
@@ -80,6 +112,10 @@ session_start();
 
         .pro-img {
             font-size: 8rem;
+        }
+
+        .ab {
+            font-size: 4rem;
         }
     </style>
 
@@ -99,7 +135,7 @@ session_start();
                                 <i class="pro-img bi bi-person-square p-2"></i>
                             </button>
                             <div class="form">
-                                <form action="./add-image.php" method="POST" enctype="multipart/form-data">
+                                <form action="./profile.php" method="POST" enctype="multipart/form-data">
                                     <input accept="image/jpeg,image/png" type="file" style="display:none;"
                                         class="fileInput" name="image">
                                 </form>
@@ -116,6 +152,30 @@ session_start();
                                     <hr>
                                     <a style="text-decoration: none; cursor:pointer" class="cancel">cancel</a>
                                 </div>
+                                <div class="dialogbox1 text-center">
+                                    <h5>About your account</h5>
+                                    <hr>
+                                    <i class="ab bi bi-person-square"></i>
+                                    <p>To maintain the integrity of our community, we're showing account information on
+                                        Instagram. People can see this information by tapping ••• on your profile and
+                                        selecting 'About this account'. <a href="" style="text-decoration: none;">See
+                                            why this information is important.</a></p>
+                                    <div class="cal d-flex">
+                                        <i class="bi bi-calendar3 p-1"></i>
+                                        <div class="join">
+                                            <p>date of joining</p>
+                                            <p>July 2017</p>
+                                        </div>
+                                    </div>
+                                    <div class="pre d-flex">
+                                        <i class="bi bi-person-fill p-1"></i>
+                                        <button class="previous bg-white border-0 rounded"
+                                            style="font-family: sans-serif;">previous username</button>
+                                    </div>
+                                    <hr>
+                                    <button class="Stop bg-white border-0 rounded" style="font-family: sans-serif;">Stop
+                                        it</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -124,7 +184,7 @@ session_start();
                     <div class="user my-2">
                         <div class="row">
                             <div class="col-3">
-                                <button class="bg-light border-0 rounded"
+                                <button class="username bg-light border-0 rounded"
                                     style="font-family: sans-serif;">username</button>
                             </div>
                             <div class="col-3">
@@ -173,12 +233,21 @@ session_start();
             </div>
         </div>
     </header>
+    <div class="dialogbox2">
+        <h5>previous username</h5>
+        <hr>
+        <p>How often an account's username changes can help you understand whether an account is authentic or
+            fraudulent.</p>
+        <h6>niazi.7147 has changed his username 3 times.</h6>
+        <hr>
+        <button class="Stop bg-white border-0 rounded" style="font-family: sans-serif;">Stop it</button>
+    </div>
     <section class="main">
         <div class="container mt-5 shadow">
             <div class="row mt-4">
                 <div class="record d-flex text-center">
                     <div class="col-3">
-                        <div class="pos d-flex align-items-center">
+                        <div class="pos d-flex">
                             <i class="bi bi-grid-3x3 p-2"></i>
                             <p class="my-2">POST</p>
                         </div>
@@ -196,7 +265,7 @@ session_start();
                         </div>
                     </div>
                     <div class="col-3">
-                        <div class="pos d-flex align-items-center">
+                        <div class="pos d-flex">
                             <i class="bi bi-person-square p-2"></i>
                             <p class="my-2">TAGGED</p>
                         </div>
@@ -222,15 +291,12 @@ session_start();
                     </div>
                 </div>
 
-
-
-
-
-
             </div>
         </div>
         </div>
     </section>
+
+
 
 
 
@@ -243,6 +309,9 @@ session_start();
         let removePhotoLink = document.getElementById("removePhoto");
         let cancelbtn = document.querySelector(".cancel");
         let overlay = document.querySelector(".overlay");
+        let username = document.querySelector(".username");
+        let dialogbox1 = document.querySelector('.dialogbox1');
+        let previous = document.querySelector('.previous');
         btn.addEventListener("click", () => {
             overlay.style.display = "block";
         });
@@ -254,9 +323,9 @@ session_start();
             }
         });
         overlay.addEventListener("click", () => {
-    overlay.style.display = "none";
-    dialogbox.style.display = "none";
-});
+            overlay.style.display = "none";
+            dialogbox.style.display = "none";
+        });
         uploadphoto.addEventListener("click", () => {
             fileInput.click();
         });
@@ -285,6 +354,14 @@ session_start();
 
         cancelbtn.addEventListener("click", () => {
             dialogbox.style.display = "none"
+        });
+        username.addEventListener("click", () => {
+            overlay.style.display = "block";
+            dialogbox1.style.display = "block";
+        });
+        previous.addEventListener("click", () => {
+            overlay.style.display = "block";
+            dialogbox2.style.display = "block";
         });
     </script>
 

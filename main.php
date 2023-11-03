@@ -23,50 +23,44 @@
 </head>
 
 <body>
-    <header class="left">
+
+    <div class=" container left w-25 shadow">
         <ul style="list-style: none;" class="p-3 ">
             <li>
-                <img src="./Assets//5a4e432a2da5ad73df7efe7a.png" width="10%" alt="" class="my-3">
+                <img src="./Assets//5a4e432a2da5ad73df7efe7a.png" width="50%" alt="" class="my-3">
+            </li>
+            <li class="d-flex">
+                <i style="font-size: 2rem;" class="mt-3 bi bi-house-door"></i> </li>
+                <div><p>home</p></div>
+            <li>
+                <i style="font-size: 2rem;" class="mt-3 bi bi-search"></i> </li>
+            <li>
+                <i style="font-size: 2rem;" class="mt-3 bi bi-compass"></i> </li>
+            <li>
+                <i style="font-size: 2rem;" class="mt-3 bi bi-person-video2"></i>
             </li>
             <li>
-                <img src="./Assets//home.png" width="60px" alt="">
+                <i style="font-size: 2rem;" class="mt-3 bi bi-messenger"></i>
             </li>
             <li>
-                <img src="./Assets//search7780.jpg" width="60px" alt="">
-            </li>
+                <i style="font-size: 2rem;" class="mt-3 bi bi-heart"></i> </li>
             <li>
-                <img src="./Assets//compass.png" width="60px" alt="">
-            </li>
+                <i style="font-size: 2rem;" class="mt-3 bi bi-plus-square"></i> </li>
             <li>
-                <img src="./Assets//video.jpg" width="60px" alt="">
-            </li>
-            <li>
-                <img src="./Assets//messenger.png" width="60px" alt="">
-            </li>
-            <li>
-                <img src="./Assets//black-heart-logo.svg" width="60px" alt="">
-            </li>
-            <li>
-                <img src="./Assets//newpost.png" width="60px" alt="">
-            </li>
-            <li>
-                <img src="./Assets//instagram+profile+user+icon-1320184028326496024.png" width="60px" alt="">
-            </li>
-
+                <i style="font-size: 2rem;" class="mt-3 bi bi-person"></i> </li>
         </ul>
-
-    </header>
-
-    <footer>
         <ul class="mt-5 pt-5" style="list-style: none;">
             <li>
-                <img class="mt-5 pt-5" src="./Assets//threads-logo-E9BA734BF6-seeklogo.com.png" width="50px" alt="">
-            </li>
+                <i style="font-size: 2rem;" class="mt-3 bi bi-threads"></i> </li>
             <li>
-                <img class="pt-4" src="./Assets///menu.png" width="50px" alt="">
-            </li>
+                <i style="font-size: 2rem;" class="mt-3 bi bi-list"></i> </li>
         </ul>
-    </footer>
+
+
+    </div>
+
+
+        
 
 
 
